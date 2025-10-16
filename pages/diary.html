@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/styles.css" />
+        <script src="../scripts/main.js"></script>
+        <title>Контрольная работа №2</title>
+    </head>
+    <body>
+        <div class="page">
+            <header class="header">
+                <h1 class="header_title">Михаил</h1>
+            </header>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="projects.html">Проекты</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link nav__link--active" href="diary.html"
+                            >Дневник</a
+                        >
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <main>
+                <h2 class="study_header">Мой учебный процесс</h2>
+                <div class="progress_rectangle">
+                    <ul>
+                        <li class="progress_list_text">
+                            5 сент - верстка макета сайта ✓
+                        </li>
+                        <li class="progress_list_text">
+                            23 сент - основы JS ✓
+                        </li>
+                        <li class="progress_list_text">
+                            3 окт - работа с формами в процессе...
+                        </li>
+                        <li class="progress_list_text">
+                            2 янв - адаптивная верстка в процессе...
+                        </li>
+                    </ul>
+                </div>
+                <h2 class="study_header">Текущие курсы</h2>
+                <ul id="list" class="courses_list">
+                    <li class="courses_text">Веб-разработка ##### 60%</li>
+                    <li class="courses_text">Wasm ### 30%</li>
+                    <li class="courses_text">JS ##### 50%</li>
+                </ul>
+                <button class="add_skill_button" onclick="addSkill('list')">
+                    Добавить навык
+                </button>
+            </main>
+        </div>
+        <footer><h2 class="footer_text">@ 2025 amogus@yandex.ru</h2></footer>
+    </body>
+</html>

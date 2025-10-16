@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/styles.css" />
+        <title>Контрольная работа №2</title>
+    </head>
+    <body>
+        <div class="page">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="nav__item">
+                        <a
+                            class="nav__link nav__link--active"
+                            href="projects.html"
+                            >Проекты</a
+                        >
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="diary.html">Дневник</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <main class="main-content">
+                <h1>Мои проекты</h1>
+                <div class="projects_container">
+                    <div class="project_card"><p>Пример</p></div>
+                    <div class="project_card"><p>Пример</p></div>
+                    <div class="project_card"><p>Пример</p></div>
+                </div>
+            </main>
+        </div>
+
+        <div id="projectModal" class="modal">
+            <div class="modal__content">
+                <span class="modal__close">&times;</span>
+                <h2 class="modal__title" id="modalTitle">Название проекта</h2>
+                <div class="modal__gallery" id="modalGallery"></div>
+                <p class="modal__description" id="modalDescription">
+                    Описание проекта
+                </p>
+                <div class="modal__links">
+                    <a
+                        href="#"
+                        class="modal__link modal__link--live"
+                        id="modalLiveLink"
+                        target="_blank"
+                        >Живая версия</a
+                    >
+                    <a
+                        href="#"
+                        class="modal__link modal__link--code"
+                        id="modalCodeLink"
+                        target="_blank"
+                        >Исходный код</a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h2 class="footer_text">@ 2025 amogus@yandex.ru</h2>
+        </footer>
+        <script src="../scripts/main.js"></script>
+    </body>
+</html>

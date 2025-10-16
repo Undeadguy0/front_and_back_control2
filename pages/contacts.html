@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/styles.css" />
+        <script src="../scripts/main.js"></script>
+        <title>Контрольная работа №2</title>
+    </head>
+    <body>
+        <div class="page">
+            <header class="header">
+                <h1 class="header_title">Михаил</h1>
+            </header>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="projects.html">Проекты</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="diary.html">Дневник</a>
+                    </li>
+                    <li class="nav__item">
+                        <a
+                            class="nav__link nav__link--active"
+                            href="contacts.html"
+                            >Контакты</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+            <main class="main-content">
+                <h2 class="study_header">Свяжитесь со мной</h2>
+                <div class="form_rectangle">
+                    <form
+                        action="mailto:amogus@yandex.ru"
+                        method="post"
+                        enctype="text/plain"
+                    >
+                        <label class="form_label" for="name">Имя:</label><br />
+                        <input type="text" id="name" name="name" /><br />
+                        <label class="form_label" for="email">Email:</label
+                        ><br />
+                        <input type="email" id="email" name="email" /><br />
+                        <label class="form_label" for="message"
+                            >Сообщение:</label
+                        ><br />
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            cols="50"
+                        ></textarea
+                        ><br />
+                        <input
+                            class="send_button"
+                            type="submit"
+                            value="Отправить"
+                        />
+                    </form>
+                </div>
+                <ul class="contacts_list">
+                    <li class="contacts_item">Почта: amogus@yandex.ru</li>
+                    <li class="contacts_item">Телефон: 8(999) 123-45-67</li>
+                    <li class="contacts_item">
+                        Адрес: Южное Чертаново, улица Пушкина, дом Колотушкина
+                    </li>
+                </ul>
+            </main>
+        </div>
+    </body>
+    <footer><h2 class="footer_text">@ 2025 amogus@yandex.ru</h2></footer>
+</html>
