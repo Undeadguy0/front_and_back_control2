@@ -2,18 +2,31 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="Свяжитесь с Михаилом - контактная информация и форма обратной связи"
+        />
         <link rel="stylesheet" href="../styles/styles.css" />
-        <script src="../scripts/main.js"></script>
-        <title>Контрольная работа №2</title>
+        <script src="../scripts/main.js" defer></script>
+        <title>Контакты | Михаил - Веб-разработчик</title>
     </head>
     <body>
+        <a href="#main-content" class="skip-link"
+            >Перейти к основному содержимому</a
+        >
+
         <div class="page">
-            <header class="header">
-                <h1 class="header_title">Михаил</h1>
+            <header class="header" role="banner">
+                <h1 class="header__title">Михаил</h1>
+                <p class="header__subtitle">Веб-разработчик</p>
             </header>
-            <nav class="nav">
-                <ul class="nav__list">
+
+            <nav class="nav" aria-label="Основная навигация">
+                <ul class="nav__list" role="list">
                     <li class="nav__item">
                         <a class="nav__link" href="../index.html">Главная</a>
                     </li>
@@ -27,50 +40,267 @@
                         <a
                             class="nav__link nav__link--active"
                             href="contacts.html"
-                            >Контакты</a
+                            aria-current="page"
                         >
+                            Контакты
+                        </a>
                     </li>
                 </ul>
             </nav>
-            <main class="main-content">
-                <h2 class="study_header">Свяжитесь со мной</h2>
-                <div class="form_rectangle">
-                    <form
-                        action="mailto:amogus@yandex.ru"
-                        method="post"
-                        enctype="text/plain"
+
+            <main id="main-content" class="main-content" role="main">
+                <section
+                    class="contacts-section"
+                    aria-labelledby="contacts-heading"
+                >
+                    <h2 id="contacts-heading" class="study_header">
+                        Свяжитесь со мной
+                    </h2>
+
+                    <div
+                        class="form_rectangle"
+                        role="form"
+                        aria-labelledby="form-heading"
                     >
-                        <label class="form_label" for="name">Имя:</label><br />
-                        <input type="text" id="name" name="name" /><br />
-                        <label class="form_label" for="email">Email:</label
-                        ><br />
-                        <input type="email" id="email" name="email" /><br />
-                        <label class="form_label" for="message"
-                            >Сообщение:</label
-                        ><br />
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="4"
-                            cols="50"
-                        ></textarea
-                        ><br />
-                        <input
-                            class="send_button"
-                            type="submit"
-                            value="Отправить"
-                        />
-                    </form>
-                </div>
-                <ul class="contacts_list">
-                    <li class="contacts_item">Почта: amogus@yandex.ru</li>
-                    <li class="contacts_item">Телефон: 8(999) 123-45-67</li>
-                    <li class="contacts_item">
-                        Адрес: Южное Чертаново, улица Пушкина, дом Колотушкина
-                    </li>
-                </ul>
+                        <h3 id="form-heading" class="form__title">
+                            Форма обратной связи
+                        </h3>
+                        <form
+                            action="mailto:amogus@yandex.ru"
+                            method="post"
+                            enctype="text/plain"
+                            class="contact-form"
+                            aria-describedby="form-instructions"
+                        >
+                            <p
+                                id="form-instructions"
+                                class="form__instructions"
+                            >
+                                Все поля обязательны для заполнения.
+                                Обязательные поля помечены звёздочкой (*).
+                            </p>
+
+                            <div class="form-group">
+                                <label class="form_label" for="name">
+                                    Имя
+                                    <span class="required" aria-hidden="true"
+                                        >*</span
+                                    >
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="name-help"
+                                    placeholder="Введите ваше имя"
+                                />
+                                <div id="name-help" class="help-text">
+                                    Пожалуйста, введите ваше полное имя
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form_label" for="email">
+                                    Email
+                                    <span class="required" aria-hidden="true"
+                                        >*</span
+                                    >
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="email-help"
+                                    placeholder="your@email.com"
+                                />
+                                <div id="email-help" class="help-text">
+                                    Мы отправим ответ на этот адрес
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form_label" for="message">
+                                    Сообщение
+                                    <span class="required" aria-hidden="true"
+                                        >*</span
+                                    >
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="6"
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="message-help"
+                                    placeholder="Опишите ваш вопрос или предложение..."
+                                ></textarea>
+                                <div id="message-help" class="help-text">
+                                    Опишите подробно ваш вопрос или предложение
+                                </div>
+                            </div>
+
+                            <button type="submit" class="send_button">
+                                Отправить сообщение
+                            </button>
+                        </form>
+                    </div>
+
+                    <div
+                        class="contacts-info"
+                        aria-labelledby="contact-info-heading"
+                    >
+                        <h3
+                            id="contact-info-heading"
+                            class="contacts-info__title"
+                        >
+                            Контактная информация
+                        </h3>
+                        <ul class="contacts_list" role="list">
+                            <li class="contacts_item">
+                                <span class="contacts_icon" aria-hidden="true"
+                                    >📧</span
+                                >
+                                <strong>Почта:</strong>
+                                <a
+                                    href="mailto:amogus@yandex.ru"
+                                    class="contacts_link"
+                                >
+                                    amogus@yandex.ru
+                                </a>
+                            </li>
+                            <li class="contacts_item">
+                                <span class="contacts_icon" aria-hidden="true"
+                                    >📞</span
+                                >
+                                <strong>Телефон:</strong>
+                                <a
+                                    href="tel:+79991234567"
+                                    class="contacts_link"
+                                >
+                                    8 (999) 123-45-67
+                                </a>
+                            </li>
+                            <li class="contacts_item">
+                                <span class="contacts_icon" aria-hidden="true"
+                                    >📍</span
+                                >
+                                <strong>Адрес:</strong>
+                                <span
+                                    >Южное Чертаново, улица Пушкина, дом
+                                    Колотушкина</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </main>
         </div>
+
+        <footer role="contentinfo">
+            <p class="footer_text">© 2025 amogus@yandex.ru</p>
+        </footer>
+
+        <div
+            id="success-message"
+            class="success-message"
+            role="alert"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+        >
+            Сообщение успешно отправлено!
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const form = document.querySelector(".contact-form");
+                const successMessage =
+                    document.getElementById("success-message");
+
+                form.addEventListener("submit", function (e) {
+                    let isValid = true;
+                    const inputs = form.querySelectorAll(
+                        "input[required], textarea[required]",
+                    );
+
+                    inputs.forEach((input) => {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.setAttribute("aria-invalid", "true");
+                            // Добавляем визуальную индикацию ошибки
+                            input.classList.add("error");
+                        } else {
+                            input.setAttribute("aria-invalid", "false");
+                            input.classList.remove("error");
+                        }
+                    });
+
+                    if (!isValid) {
+                        e.preventDefault();
+
+                        const firstError = form.querySelector(".error");
+                        if (firstError) {
+                            firstError.focus();
+                        }
+
+                        const errorAlert = document.createElement("div");
+                        errorAlert.className = "error-message";
+                        errorAlert.setAttribute("role", "alert");
+                        errorAlert.textContent =
+                            "Пожалуйста, заполните все обязательные поля";
+
+                        const existingError =
+                            form.querySelector(".error-message");
+                        if (existingError) {
+                            existingError.remove();
+                        }
+
+                        form.insertBefore(errorAlert, form.firstChild);
+                    } else {
+                        e.preventDefault();
+                        successMessage.hidden = false;
+                        form.reset();
+
+                        setTimeout(() => {
+                            successMessage.hidden = true;
+                        }, 5000);
+                    }
+                });
+
+                const inputs = form.querySelectorAll("input, textarea");
+                inputs.forEach((input) => {
+                    input.addEventListener("input", function () {
+                        if (this.value.trim()) {
+                            this.setAttribute("aria-invalid", "false");
+                            this.classList.remove("error");
+
+                            const errorMessage =
+                                form.querySelector(".error-message");
+                            if (errorMessage) {
+                                errorMessage.remove();
+                            }
+                        }
+                    });
+                });
+
+                const interactiveElements = document.querySelectorAll(
+                    "a, button, input, textarea",
+                );
+                interactiveElements.forEach((el) => {
+                    el.addEventListener("focus", function () {
+                        this.style.outline = "3px solid var(--color-secondary)";
+                        this.style.outlineOffset = "2px";
+                    });
+
+                    el.addEventListener("blur", function () {
+                        this.style.outline = "";
+                    });
+                });
+            });
+        </script>
     </body>
-    <footer><h2 class="footer_text">@ 2025 amogus@yandex.ru</h2></footer>
 </html>

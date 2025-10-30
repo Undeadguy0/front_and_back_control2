@@ -2,72 +2,301 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="Персональная страница Михаила - студента, увлекающегося веб-разработкой"
+        />
         <link rel="stylesheet" href="styles/styles.css" />
-        <title>Контрольная работа №2</title>
+        <title>Михаил - Веб-разработчик | Главная</title>
     </head>
     <body>
+        <!-- Skip-link для доступности -->
+        <a href="#main-content" class="skip-link"
+            >Перейти к основному содержимому</a
+        >
+
         <div class="page">
-            <header class="header">
-                <h1 class="header_title">Михаил</h1>
+            <header class="header" role="banner">
+                <h1 class="header__title">Михаил</h1>
+                <p class="header__subtitle">Веб-разработчик</p>
             </header>
-            <nav class="nav">
+
+            <nav class="nav" aria-label="Основная навигация">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a class="nav__link nav__link--active" href="index.html"
-                            >Главная</a
+                        <a
+                            class="nav__link nav__link--active"
+                            href="index.html"
+                            aria-current="page"
                         >
+                            Главная
+                        </a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="pages/projects.html"
-                            >Проекты</a
-                        >
+                        <a class="nav__link" href="pages/projects.html">
+                            Проекты
+                        </a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="pages/diary.html">Дневник</a>
+                        <a class="nav__link" href="pages/diary.html">
+                            Дневник
+                        </a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="pages/contacts.html"
-                            >Контакты</a
-                        >
+                        <a class="nav__link" href="pages/contacts.html">
+                            Контакты
+                        </a>
                     </li>
                 </ul>
             </nav>
-            <div class="textAndPhoto">
-                <img class="photo__main" src="images/rust_crab.png" />
-                <h3 class="textAndPhoto__title">
-                    Привет! Я студент группы ЭФБО-16-24. Увлекаюсь
-                    веб-разработкой.
-                </h3>
-            </div>
-            <div class="my_skills">
-                <h2 class="skills_header">Мои навыки</h2>
-                <div class="skills_main">
-                    <ul class="skills_list">
-                        <li class="skill">JavaScript</li>
-                        <li class="skill">HTML/CSS</li>
-                        <li class="skill">React</li>
-                        <li class="skill">Rust</li>
-                    </ul>
-                    <div class="skills_metrics">
-                        <p>####### 60%</p>
-                        <p>######### 90%</p>
-                        <p>##### 50%</p>
-                        <p>########## 100%</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="my_best_projects">
-                <h2 class="best_header">Мои лучшие прокты</h2>
-                <div class="best_projects">
-                    <img class="best_img" alt="проект 1" />
-                    <img class="best_img" alt="проект 2" />
-                    <img class="best_img" alt="проект 3" />
+            <main id="main-content" class="main-content" role="main">
+                <!-- Секция "Обо мне" -->
+                <section class="textAndPhoto" aria-labelledby="about-heading">
+                    <img
+                        class="photo__main"
+                        src="images/rust_crab.png"
+                        alt="Rust краб - символ языка программирования Rust"
+                        width="400"
+                        height="400"
+                    />
+                    <div class="textAndPhoto__content">
+                        <h2 id="about-heading" class="textAndPhoto__title">
+                            Привет! Я студент группы ЭФБО-16-24. Увлекаюсь
+                            веб-разработкой.
+                        </h2>
+                        <p class="textAndPhoto__description">
+                            Занимаюсь разработкой современных веб-приложений с
+                            акцентом на доступность и производительность.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Секция "Навыки" -->
+                <section class="my_skills" aria-labelledby="skills-heading">
+                    <h2 id="skills-heading" class="skills_header">
+                        Мои навыки
+                    </h2>
+                    <div class="skills_main">
+                        <ul class="skills_list" role="list">
+                            <li class="skill">
+                                <span class="skill__name">JavaScript</span>
+                                <div
+                                    class="skill__progress"
+                                    role="progressbar"
+                                    aria-valuenow="60"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                >
+                                    <div
+                                        class="skill__progress-bar"
+                                        style="width: 60%"
+                                    ></div>
+                                </div>
+                                <span class="skill__percentage">60%</span>
+                            </li>
+                            <li class="skill">
+                                <span class="skill__name">HTML/CSS</span>
+                                <div
+                                    class="skill__progress"
+                                    role="progressbar"
+                                    aria-valuenow="90"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                >
+                                    <div
+                                        class="skill__progress-bar"
+                                        style="width: 90%"
+                                    ></div>
+                                </div>
+                                <span class="skill__percentage">90%</span>
+                            </li>
+                            <li class="skill">
+                                <span class="skill__name">React</span>
+                                <div
+                                    class="skill__progress"
+                                    role="progressbar"
+                                    aria-valuenow="50"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                >
+                                    <div
+                                        class="skill__progress-bar"
+                                        style="width: 50%"
+                                    ></div>
+                                </div>
+                                <span class="skill__percentage">50%</span>
+                            </li>
+                            <li class="skill">
+                                <span class="skill__name">Rust</span>
+                                <div
+                                    class="skill__progress"
+                                    role="progressbar"
+                                    aria-valuenow="100"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                >
+                                    <div
+                                        class="skill__progress-bar"
+                                        style="width: 100%"
+                                    ></div>
+                                </div>
+                                <span class="skill__percentage">100%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Секция "Проекты" -->
+                <section
+                    class="my_best_projects"
+                    aria-labelledby="projects-heading"
+                >
+                    <h2 id="projects-heading" class="best_header">
+                        Мои лучшие проекты
+                    </h2>
+                    <div class="best_projects">
+                        <article class="project-card">
+                            <img
+                                class="best_img"
+                                src="images/project1.jpg"
+                                alt="Интерфейс веб-приложения для управления задачами"
+                                width="300"
+                                height="200"
+                            />
+                            <h3 class="project-card__title">Менеджер задач</h3>
+                            <p class="project-card__description">
+                                React-приложение для управления проектами
+                            </p>
+                        </article>
+                        <article class="project-card">
+                            <img
+                                class="best_img"
+                                src="images/project2.jpg"
+                                alt="Главная страница интернет-магазина"
+                                width="300"
+                                height="200"
+                            />
+                            <h3 class="project-card__title">
+                                Интернет-магазин
+                            </h3>
+                            <p class="project-card__description">
+                                Полнофункциональный сайт на JavaScript
+                            </p>
+                        </article>
+                        <article class="project-card">
+                            <img
+                                class="best_img"
+                                src="images/project3.jpg"
+                                alt="Дашборд аналитики данных"
+                                width="300"
+                                height="200"
+                            />
+                            <h3 class="project-card__title">
+                                Аналитический дашборд
+                            </h3>
+                            <p class="project-card__description">
+                                Визуализация данных с использованием D3.js
+                            </p>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer role="contentinfo">
+            <p class="footer_text">© 2025 amogus@yandex.ru</p>
+        </footer>
+
+        <!-- Модальное окно -->
+        <div
+            class="modal"
+            id="project-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            tabindex="-1"
+        >
+            <div class="modal__content">
+                <button
+                    class="modal__close"
+                    aria-label="Закрыть модальное окно"
+                >
+                    &times;
+                </button>
+                <h2 id="modal-title" class="modal__title">Детали проекта</h2>
+                <div class="modal__gallery">
+                    <!-- Галерея изображений проекта -->
+                </div>
+                <p class="modal__description">Описание проекта...</p>
+                <div class="modal__links">
+                    <a href="#" class="modal__link modal__link--live"
+                        >Посмотреть проект</a
+                    >
+                    <a href="#" class="modal__link modal__link--code"
+                        >Исходный код</a
+                    >
                 </div>
             </div>
         </div>
 
-        <footer><h2 class="footer_text">@ 2025 amogus@yandex.ru</h2></footer>
+        <script>
+            // Базовая JavaScript функциональность для доступности
+            document.addEventListener("DOMContentLoaded", function () {
+                // Управление модальным окном
+                const modal = document.getElementById("project-modal");
+                const closeBtn = modal.querySelector(".modal__close");
+
+                // Закрытие модалки по Escape
+                document.addEventListener("keydown", function (e) {
+                    if (e.key === "Escape" && modal.style.display === "block") {
+                        closeModal();
+                    }
+                });
+
+                // Закрытие по клику на overlay
+                modal.addEventListener("click", function (e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                closeBtn.addEventListener("click", closeModal);
+
+                function closeModal() {
+                    modal.style.display = "none";
+                }
+
+                // Ловушка фокуса для модалки
+                modal.addEventListener("keydown", function (e) {
+                    if (e.key === "Tab") {
+                        const focusableElements = modal.querySelectorAll(
+                            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+                        );
+                        const firstElement = focusableElements[0];
+                        const lastElement =
+                            focusableElements[focusableElements.length - 1];
+
+                        if (
+                            e.shiftKey &&
+                            document.activeElement === firstElement
+                        ) {
+                            e.preventDefault();
+                            lastElement.focus();
+                        } else if (
+                            !e.shiftKey &&
+                            document.activeElement === lastElement
+                        ) {
+                            e.preventDefault();
+                            firstElement.focus();
+                        }
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
